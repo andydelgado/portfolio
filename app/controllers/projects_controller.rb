@@ -34,4 +34,8 @@ class ProjectsController < ApplicationController
       end
     end
   end
+
+  def show
+    @project = Project.find(params[:id])
+  end
 end
