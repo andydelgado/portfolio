@@ -1,8 +1,15 @@
+3.times do |topic|
+	Topic.create!(
+		title: "Topic #{topic}"
+	)
+end
+
 10.times do |blog|
 	Blog.create!(
 		title: "My Blog Post #{blog}",
 		body: "asd;flkasdjf; as;dlkfjas df;lkjasdf;aklsdjf asd;faklsjdf a;sldk
-		a;slkdfja;sdlkfjas;dlkja a;sdlkfjas;dfkaj a;sldkfjas;dfkj"
+		a;slkdfja;sdlkfjas;dlkja a;sdlkfjas;dfkaj a;sldkfjas;dfkj",
+		topic_id: Topic.last.id
 	)
 end
 
@@ -17,10 +24,20 @@ end
 
 puts "5 skills created"
 
-9.times do |project|
+8.times do |project|
 	Project.create!(
 		title: "Project #{project}",
-		subtitle: "My great service",
+		subtitle: "Ruby on Rails",
+		body: "asd;flkj as;dlkfjasd; a;sldkjfas;dlkfj",
+		main_image: "http://via.placeholder.com/600x400",
+		thumb_image: "http://via.placeholder.com/350x200" 
+	)
+end
+
+1.times do |project|
+	Project.create!(
+		title: "Project #{project}",
+		subtitle: "React",
 		body: "asd;flkj as;dlkfjasd; a;sldkjfas;dlkfj",
 		main_image: "http://via.placeholder.com/600x400",
 		thumb_image: "http://via.placeholder.com/350x200" 
