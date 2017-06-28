@@ -9,10 +9,11 @@ class ProjectsController < ApplicationController
 
 	def new
 		@project = Project.new
+    3.times { @project.technologies.build }
 	end
 
 	def create
-    @project = Project.new(params.require(:project).permit(:title, :subtitle, :body))
+    @project = Project.new(params.require(:project).permit(:title, :subtitle, :body, technologies_attributes: [:name]))
 
     respond_to do |format|
       if @project.save
