@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   resources :projects, except: [:show]
   get 'react-projects', to: 'projects#react'
   get 'project/:id', to: 'projects#show', as: 'project_show'
