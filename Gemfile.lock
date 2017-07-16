@@ -1,4 +1,10 @@
 GIT
+  remote: https://github.com/andydelgado/delgado_view_tool
+  revision: 984c510a64e4f068e5cb155a19f8dea987a3f104
+  specs:
+    delgado_view_tool (0.1.0)
+
+GIT
   remote: https://github.com/twbs/bootstrap-rubygem
   revision: b156edfee2b9629ad4751ee2a118a04f824ef9eb
   specs:
@@ -186,6 +192,7 @@ DEPENDENCIES
   bootstrap!
   byebug
   coffee-rails (~> 4.2)
+  delgado_view_tool!
   devise (~> 4.2)
   friendly_id (~> 5.1.0)
   jbuilder (~> 2.5)
