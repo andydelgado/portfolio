@@ -1,5 +1,5 @@
 <h1>Projects</h1>
 
-<%= link_to "Create new project", new_project_path %>
+<%= link_to "Create new project", new_project_path if logged_in?(:site_admin) %>
 
 <%= render @projects %>
