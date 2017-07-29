@@ -1,0 +1,7 @@
+<div class="blog-header">
+  <div class="container">
+    <h1 class="blog-title">Andy's blog</h1>
+    <p class="lead blog-description">Thoughts, ramblings and ideas from the mind of Andy.</p>
+    <%= link_to 'Write a new blog entry', new_blog_path if logged_in?(:site_admin) %>
+  </div>
+</div>
