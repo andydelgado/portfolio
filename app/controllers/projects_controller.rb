@@ -1,4 +1,5 @@
 class ProjectsController < ApplicationController
+  skip_before_action :verify_authenticity_token, only: :sort
   before_action :set_project, only: [:edit, :update, :show, :destroy]
   layout 'project'
   access all: [:show, :index, :react], user: {except: [:destroy, :new, :create, :update, :edit]}, site_admin: :all
@@ -6,6 +7,14 @@ class ProjectsController < ApplicationController
 	def index
 		@projects = Project.by_position
 	end
+
+  def sort
+    params[:order].each do |key, value|
+      Project.find(value[:id]).update(position: value[:position])
+    end
+
+    head :ok
+  end
 
   def react
     @react_projects = Project.react
