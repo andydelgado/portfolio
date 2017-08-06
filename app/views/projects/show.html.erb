@@ -13,6 +13,12 @@
       <% @project.technologies.each do |t| %>
         <p><%= t.name %></p>
       <% end %>
+
+      <% if logged_in?(:site_admin) %>
+        <div class="col-md-12">
+          <%= link_to "Edit", edit_project_path, class: 'btn btn-primary' %>
+        </div>
+      <% end %>
     </div>
   </div>
 </div>
