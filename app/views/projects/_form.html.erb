@@ -1,4 +1,9 @@
 <%= form_for(@project) do |f| %>
+  <% if @project.errors.any? %>
+    <% @project.errors.full_messages.each do |error| %>
+      <%= js add_gritter(error, title: "Andy Delgado portfolio") %>
+    <% end %>
+  <% end %>
   <div class="row">
     <div class="col-md-6">
       <div class="form-group">
