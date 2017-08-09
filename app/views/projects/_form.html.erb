@@ -1,7 +1,7 @@
 <%= form_for(@project) do |f| %>
   <% if @project.errors.any? %>
     <% @project.errors.full_messages.each do |error| %>
-      <%= js add_gritter(error, title: "Andy Delgado portfolio") %>
+      <%= alert_generator error %>
     <% end %>
   <% end %>
   <div class="row">
