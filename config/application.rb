@@ -21,6 +21,7 @@ module Portfolio
     config.load_defaults 5.1
 
     config.eager_load_paths << "#{Rails.root}/lib"
+    config.secret_key_base = ENV["SECRET_KEY_BASE"]
     # Don't generate system test files.
     config.generators.system_tests = nil
   end
